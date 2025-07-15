@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUA Beji - Kantor Urusan Agama Kecamatan Beji</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes marquee {
+            0%   { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            display: inline-block;
+            min-width: 100%;
+            animation: marquee 15s linear infinite;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .nav-link:hover {
+            color: #1eaf3d;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .hero-overlay {
+            background: rgba(14, 230, 43, 0.884);
+        }
+    </style>
+</head>
+<body class="bg-green-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-green shadow-md">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="IMG/Kementerian_Agama_new_logo (2).png" alt="Logo KUA Beji - Kantor Urusan Agama dengan tulisan arab dan Indonesia" class="h-12">
+                    <div class="ml-3 hidden md:block">
+                        <h1 class="font-bold text-lg text-green-800">KUA KECAMATAN BEJI</h1>
+                        <p class="text-sm text-green-600">Kementerian Agama Republik Indonesia</p>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <svg class="w-6 h-6 text-green-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#beranda" class="nav-link text-green-800 font-medium hover:text-blue-600">Beranda</a>
+                    <div class="dropdown relative">
+                        <button class="nav-link text-green-800 font-medium hover:text-green-600 flex items-center">
+                            Profil <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu absolute hidden bg-white py-2 px-4 shadow-lg rounded-md mt-1 w-48">
+                            <a href="#tentang" class="block py-2 text-green-700 hover:text-green-600">Tentang Kami</a>
+                            <a href="#visi-misi" class="block py-2 text-green-700 hover:text-green-600">Visi & Misi</a>
+                            <a href="#struktur" class="block py-2 text-green-700 hover:text-green-600">Struktur Organisasi</a>
+                        </div>
+                    </div>
+                    <a href="#layanan" class="nav-link text-green-800 font-medium hover:text-green-600">Layanan</a>
+                    <a href="#berita" class="nav-link text-green-800 font-medium hover:text-green-600">Berita</a>
+                    <a href="#kontak" class="nav-link text-green-800 font-medium hover:text-green-600">Kontak</a>
+                    <a href="#Alamat Lokasi" class="nav-link text-green-800 font-medium hover:text-green-600">Alamat Lokasi</a>
+                </nav>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="md:hidden hidden py-2" id="mobile-menu">
+                <a href="#beranda" class="block py-2 px-4 text-green-800 hover:bg-green-50 rounded">Beranda</a>
+                <div class="dropdown">
+                    <button class="w-full text-left py-2 px-4 text-green-800 hover:bg-green-50 rounded flex justify-between items-center">
+                        Profil
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                    <div class="pl-4 hidden">
+                        <a href="#tentang" class="block py-2 px-4 text-green-700 hover:bg-green-50 rounded">Tentang Kami</a>
+                        <a href="#visi-misi" class="block py-2 px-4 text-green-700 hover:bg-green-50 rounded">Visi & Misi</a>
+                        <a href="#struktur" class="block py-2 px-4 text-green-700 hover:bg-green-50 rounded">Struktur Organisasi</a>
+                    </div>
+                </div>
+                <a href="#layanan" class="block py-2 px-4 text-green-800 hover:bg-green-50 rounded">Layanan</a>
+                <a href="#berita" class="block py-2 px-4 text-green-800 hover:bg-green-50 rounded">Berita</a>
+                <a href="#Alamat Lokasi" class="block py-2 px-4 text-green-800 hover:bg-green-50 rounded">Alamat Lokasi</a>
+                <a href="#kontak" class="block py-2 px-4 text-green-800 hover:bg-green-50 rounded">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative h-96 flex items-center justify-center">
+        <img src="https://placehold.co/1920x1080" alt="Gedung KUA Beji modern dengan nuansa islami, dikelilingi taman yang asri" class="absolute inset-0 w-full h-full object-cover">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">KANTOR URUSAN AGAMA KECAMATAN BEJI</h1>
+            <p class="text-xl text-white mb-8">Melayani Dengan Hati, Membangun Keluarga Sakinah</p>
+            <a href="#layanan" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">Lihat Layanan</a>
+        </div>
+    </section>
+
+    <!-- Quick Info Section -->
+    <section class="bg-green py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg border border-green-100 flex items-center">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-green-800 mb-1">Jam Pelayanan</h3>
+                        <p class="text-green-700">Senin - Jumat: 08:00 - 16:00</p>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-lg border border-blue-100 flex items-center">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-green-800 mb-1">Kontak Darurat</h3>
+                        <p class="text-green-700">(021) 12345678</p>
+                    </div>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-lg border border-blue-100 flex items-center">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-green-800 mb-1">Email</h3>
+                        <p class="text-green-700">kua.beji@kemenag.go.id</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Running Text -->
+    <div class="w-full bg-green-800 overflow-hidden whitespace-nowrap py-2">
+        <p class="text-white font-semibold text-center animate-marquee text-sm md:text-base">
+            SELAMAT DATANG DI KANTOR URUSAN AGAMA BEJI KOTA DEPOK 2025
+        </p>
+    </div>
+
+    <!-- Tentang KUA Section -->
+    <section id="tentang" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Profil KUA Beji</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="IMG/logo kua.png" alt="Kantor KUA Beji dengan bangunan modern bernuansa islami, dengan beberapa staf sedang berdiskusi" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-green-800 mb-4">Selamat Datang di KUA Kecamatan Beji</h3>
+                    <p class="text-gray-700 mb-4">Kantor Urusan Agama (KUA) Kecamatan Beji merupakan unit pelayanan Kementerian Agama yang bertugas melayani masyarakat dalam urusan keagamaan, khususnya terkait nikah, talak, cerai, rujuk, dan pembinaan keluarga sakinah.</p>
+                    <p class="text-gray-700 mb-6">Kami hadir untuk memberikan pelayanan terbaik dengan mengedepankan prinsip kejujuran, ketanggapan, dan kemudahan akses bagi seluruh masyarakat Kecamatan Beji.</p>
+                    <a href="#visi-misi" class="text-green-600 font-medium hover:underline">Lihat Visi & Misi Kami →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi & Misi Section -->
+    <section id="visi-misi" class="py-12 bg-green">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-800 mb-4">Visi & Misi</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-blue-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-800">Visi</h3>
+                    </div>
+                    <p class="text-gray-700">"Mewujudkan pelayanan nikah yang berkualitas dan keluarga sakinah dalam bingkai masyarakat yang religius dan harmonis di Kecamatan Beji."</p>
+                </div>
+                
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-800">Misi</h3>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>Memberikan pelayanan nikah yang mudah, murah, cepat dan berkualitas</li>
+                        <li>Meningkatkan pengetahuan masyarakat tentang hukum perkawinan Islam</li>
+                        <li>Melaksanakan pembinaan keluarga sakinah secara berkelanjutan</li>
+                        <li>Mengembangkan sistem administrasi yang modern dan transparan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Struktur Organisasi -->
+    <section id="struktur" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Struktur Organisasi</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Berikut struktur organisasi KUA Kecamatan Beji yang siap melayani masyarakat dengan profesional</p>
+            </div>
+            
+            <div class="flex justify-center">
+                <img src="https://placehold.co/800x600" alt="Diagram struktur organisasi KUA Beji dengan Kepala KUA di puncak diikuti oleh seksi-seksi dibawahnya" class="rounded-lg shadow-lg w-full max-w-4xl">
+            </div>
+            
+            <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
+                        <img src="https://placehold.co/300x300" alt="Foto Kepala KUA Beji berpakaian resmi dengan latar kantor" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-blue-800 mb-1">Dr. H. Ahmad Sudirman, M.Pd.I</h3>
+                    <p class="text-blue-600 mb-2">Kepala KUA</p>
+                    <p class="text-gray-600 text-sm">NIP. 197003051999031001</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
+                        <img src="https://placehold.co/300x300" alt="Foto Sekretaris KUA Beji wanita berhijab dengan senyum ramah" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-blue-800 mb-1">Dra. Siti Aminah, M.Si</h3>
+                    <p class="text-blue-600 mb-2">Sekretaris</p>
+                    <p class="text-600 text-sm">NIP. 197512312000122001</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
+                        <img src="https://placehold.co/300x300" alt="Foto Kepala Seksi Nikah KUA Beji pria berkacamata dengan ekspresi serius" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-blue-800 mb-1">H. Muhammad Ridwan, S.Ag</h3>
+                    <p class="text-blue-600 mb-2">Kepala Seksi Nikah</p>
+                    <p class="text-gray-600 text-sm">NIP. 198010102005011003</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-blue-100">
+                        <img src="https://placehold.co/300x300" alt="Foto Petugas Pencatatan KUA Beji wanita muda berhijab sedang bekerja di depan komputer" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-bold text-blue-800 mb-1">Nurul Hidayati, S.Sos</h3>
+                    <p class="text-blue-600 mb-2">Petugas Pencatatan</p>
+                    <p class="text-gray-600 text-sm">NIP. 198905052010122003</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan Section -->
+    <section id="layanan" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Layanan Kami</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Berbagai layanan terbaik kami siap membantu kebutuhan keagamaan Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Pasangan muslim sedang mendaftar nikah di KUA dengan petugas yang ramah" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Pendaftaran Nikah</h3>
+                        <p class="text-gray-700 mb-4">Proses pendaftaran nikah dengan kelengkapan persyaratan yang mudah dipahami.</p>
+                        <a href="#" class="text-blue-600 font-medium hover:underline flex items-center">
+                            Selengkapnya
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Konsultan nikah sedang memberikan penjelasan kepada pasangan dengan infografis tentang pernikahan" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Konsultasi Pernikahan</h3>
+                        <p class="text-gray-700 mb-4">Bimbingan dan konsultasi mengenai hak dan kewajiban dalam pernikahan islami.</p>
+                        <a href="#" class="text-blue-600 font-medium hover:underline flex items-center">
+                            Selengkapnya
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Petugas KUA sedang memberikan kursus pra nikah kepada kelompok peserta di ruang kelas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Bimbingan Pra Nikah</h3>
+                        <p class="text-gray-700 mb-4">Pembekalan pengetahuan bagi calon pengantin tentang kehidupan berumah tangga.</p>
+                        <a href="#" class="text-blue-600 font-medium hover:underline flex items-center">
+                            Selengkapnya
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Suami istri sedang melakukan proses rujuk di KUA dengan suasana khidmat" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Proses Rujuk</h3>
+                        <p class="text-gray-700 mb-4">Layanan penghukuman rujuk bagi pasangan yang ingin kembali setelah talak.</p>
+                        <a href="#" class="text-blue-600 font-medium hover:underline flex items-center">
+                            Selengkapnya
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Keluarga muslim sedang mengikuti seminar keluarga sakinah di aula KUA" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Pembinaan Keluarga Sakinah</h3>
+                        <p class="text-gray-700 mb-4">Program pembinaan keluarga harmonis sesuai ajaran Islam.</p>
+                        <a href="#" class="text-blue-600 font-medium hover:underline flex items-center">
+                            Selengkapnya
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Warga sedang mengurus dokumen di loket pelayanan KUA dengan sistem antrian terorganisir" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Pelayanan Administrasi</h3>
+                        <p class="text-gray-700 mb-4">Pengurusan berbagai dokumen keagamaan seperti kutipan akta nikah dan lainnya.</p>
+                        <a href="#" class="text-blue-600 font-medium hover:underline flex items-center">
+                            Selengkapnya
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Persyaratan Section -->
+    <section class="py-12 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold text-blue-800 mb-4">Persyaratan Nikah</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="border-b border-gray-200">
+                        <button class="flex justify-between items-center w-full px-6 py-4 bg-blue-50 text-blue-800 font-semibold">
+                            <span>Persyaratan Untuk WNI</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="px-6 py-4 hidden">
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Fotokopi KTP Calon Mempelai (WNI)</li>
+                                <li>Fotokopi Kartu Keluarga</li>
+                                <li>Pas foto berwarna ukuran 3x4 untuk pengantin (2 lembar)</li>
+                                <li>Fotokopi Akta Kelahiran/Surat Keterangan Lahir</li>
+                                <li>Surat Keterangan Belum Menikah dari Desa/Kelurahan</li>
+                                <li>Surat Izin Orang Tua/Wali bagi yang berusia 19-21 tahun</li>
+                                <li>Daftar riwayat hidup untuk pegawai negeri/TNI/Polri</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-gray-200">
+                        <button class="flex justify-between items-center w-full px-6 py-4 bg-blue-50 text-blue-800 font-semibold">
+                            <span>Persyaratan Untuk WNA</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="px-6 py-4 hidden">
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Paspor asli dan fotokopi</li>
+                                <li>Surat Keterangan Status dari Kedutaan/Konsulat negara asal</li>
+                                <li>Fotokopi KITAS/KITAP</li>
+                                <li>Surat Keterangan Belum Menikah atau Status Cerai Hidup/Mati dari instansi berwenang di negara asal</li>
+                                <li>Terjemahan resmi dokumen berbahasa asing</li>
+                                <li>Pas foto berwarna ukuran 4x6 (2 lembar)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="border-b border-gray-200">
+                        <button class="flex justify-between items-center w-full px-6 py-4 bg-blue-50 text-blue-800 font-semibold">
+                            <span>Biaya Pelayanan</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="px-6 py-4 hidden">
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>Pendaftaran Nikah: Rp50.000</li>
+                                <li>Kutipan Akta Nikah: Rp10.000 per lembar</li>
+                                <li>Bimbingan Pranikah: Gratis</li>
+                                <li>Konsultasi Keluarga: Gratis</li>
+                                <li>Legalisir Dokumen: Rp5.000 per cap</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <button class="flex justify-between items-center w-full px-6 py-4 bg-blue-50 text-blue-800 font-semibold">
+                            <span>Download Formulir</span>
+                            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </button>
+                        <div class="px-6 py-4 hidden">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <a href="#" class="flex items-center p-3 bg-gray-50 rounded border border-gray-200 hover:bg-blue-50 transition">
+                                    <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <div>
+                                        <p class="font-medium text-blue-800">Formulir Pendaftaran Nikah</p>
+                                        <p class="text-xs text-gray-500">PDF, 250KB</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="flex items-center p-3 bg-gray-50 rounded border border-gray-200 hover:bg-blue-50 transition">
+                                    <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <div>
+                                        <p class="font-medium text-blue-800">Surat Keterangan Belum Menikah</p>
+                                        <p class="text-xs text-gray-500">DOC, 120KB</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="flex items-center p-3 bg-gray-50 rounded border border-gray-200 hover:bg-blue-50 transition">
+                                    <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <div>
+                                        <p class="font-medium text-blue-800">Surat Izin Orang Tua/Wali</p>
+                                        <p class="text-xs text-gray-500">PDF, 180KB</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="flex items-center p-3 bg-gray-50 rounded border border-gray-200 hover:bg-blue-50 transition">
+                                    <svg class="w-6 h-6 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                    <div>
+                                        <p class="font-medium text-blue-800">Persyaratan Pernikahan Lengkap</p>
+                                        <p class="text-xs text-gray-500">PDF, 350KB</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Alamat & Lokasi Section -->
+    <section id="Alamat Lokasi" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Alamat & Lokasi Kami</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+                <p class="text-gray-700">Jl. Raya Beji No.123, Kota Depok, Jawa Barat 16421</p>
+            </div>
+            <div class="flex justify-center">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.074203901176!2d106.823873!3d-6.387435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec1d1d84c4b5%3A0x4bcb91e861c2847a!2sKUA%20Kecamatan%20Beji!5e0!3m2!1sid!2sid!4v1629799341932!5m2!1sid!2sid" 
+                    width="100%" height="400" style="border:0;" 
+                    allowfullscreen="" loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Section -->
+    <section id="berita" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Berita & Pengumuman</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Informasi terbaru seputar kegiatan dan pengumuman resmi dari KUA Kecamatan Beji</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Kegiatan pelatihan konselor keluarga sakinah yang sedang berlangsung di aula KUA Beji" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span>15 Juni 2023</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-blue-600">Berita</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Pelatihan Konselor Keluarga Sakinah Angkatan V</h3>
+                        <p class="text-gray-700 mb-4">KUA Beji menyelenggarakan pelatihan konselor keluarga sakinah untuk meningkatkan kualitas pembinaan keluarga...</p>
+                        <a href="#" class="text-blue-600 font-medium hover:underline flex items-center">
+                            Baca selengkapnya
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Peserta seminar sedang mendengarkan pemateri di panggung utama acara Hari Keluarga Nasional" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span>29 Mei 2023</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-blue-600">Kegiatan</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Seminar Hari Keluarga Nasional 2023</h3>
+                        <p class="text-gray-700 mb-4">Dalam rangka memperingati Hari Keluarga Nasional, KUA Beji mengadakan seminar dengan tema "Ketahanan Keluarga di Era Digital"...</p>
+                        <a href="#" class="text-blue-600 font-medium hover:underline flex items-center">
+                            Baca selengkapnya
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placehold.co/600x400" alt="Pengumuman resmi di papan pengumuman KUA Beji tentang perubahan jam layanan" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <span>10 Mei 2023</span>
+                            <span class="mx-2">•</span>
+                            <span class="text-blue-600">Pengumuman</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">Perubahan Jam Pelayanan Selama Bulan Ramadhan</h3>
+                        <p class="text-gray-700 mb-4">Diberitahukan kepada masyarakat bahwa selama bulan Ramadhan 1444 H, jam pelayanan KUA Beji akan disesuaikan...</p>
+                        <a href="#" class="text-blue-600 font-medium hover:underline flex items-center">
+                            Baca selengkapnya
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+                    Lihat Semua Berita
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Galeri Kegiatan</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Dokumentasi berbagai kegiatan dan acara yang diselenggarakan oleh KUA Kecamatan Beji</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <a href="#" class="group">
+                    <div class="h-48 overflow-hidden rounded-lg relative">
+                        <img src="https://placehold.co/400x400" alt="Pelatihan konselor perkawinan dengan peserta sedang diskusi kelompok" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-700 group-hover:text-blue-600 transition">Pelatihan Konselor Nikah</p>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="h-48 overflow-hidden rounded-lg relative">
+                        <img src="https://placehold.co/400x400" alt="Seminar keluarga sakinah dengan pembicara di panggung" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-700 group-hover:text-blue-600 transition">Seminar Keluarga Sakinah</p>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="h-48 overflow-hidden rounded-lg relative">
+                        <img src="https://placehold.co/400x400" alt="Penyerahan sertifikat nikah kepada pasangan pengantin baru" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-700 group-hover:text-blue-600 transition">Akad Nikah Massal</p>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="h-48 overflow-hidden rounded-lg relative">
+                        <img src="https://placehold.co/400x400" alt="Kunjungan pejabat Kemenag ke KUA Beji sedang meninjau fasilitas" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-700 group-hover:text-blue-600 transition">Kunjungan Kerja Kemenag</p>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="h-48 overflow-hidden rounded-lg relative">
+                        <img src="https://placehold.co/400x400" alt="Kegiatan bakti sosial di masyarakat sekitar dengan peserta memakai baju seragam" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-700 group-hover:text-blue-600 transition">Bakti Sosial Ramadhan</p>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="h-48 overflow-hidden rounded-lg relative">
+                        <img src="https://placehold.co/400x400" alt="Pelatihan administrasi nikah untuk petugas KUA sedang dilakukan di ruang rapat" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-700 group-hover:text-blue-600 transition">Pelatihan Administrasi</p>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="h-48 overflow-hidden rounded-lg relative">
+                        <img src="https://placehold.co/400x400" alt="Acara buka puasa bersama staf KUA Beji di bulan Ramadhan" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-700 group-hover:text-blue-600 transition">Buka Puasa Bersama</p>
+                </a>
+                
+                <a href="#" class="group">
+                    <div class="h-48 overflow-hidden rounded-lg relative">
+                        <img src="https://placehold.co/400x400" alt="Prosesi akad nikah di KUA Beji dengan pengantin dan keluarga hadir" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <p class="mt-2 text-sm text-gray-700 group-hover:text-blue-600 transition">Momen Akad Nikah</p>
+                </a>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-medium py-2 px-6 rounded-lg transition duration-300">
+                    Lihat Lebih Banyak
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="py-12 bg-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-blue-800 mb-4">Hubungi Kami</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Kirim pesan atau datang langsung ke kantor kami untuk informasi lebih lanjut</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-blue-800 mb-6">Formulir Kontak</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="nama" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                                <input type="text" id="nama" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan nama lengkap">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Alamat Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan alamat email">
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="subjek" class="block text-gray-700 font-medium mb-2">Subjek</label>
+                                <input type="text" id="subjek" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Masukkan subjek pesan">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="pesan" class="block text-gray-700 font-medium mb-2">Pesan</label>
+                                <textarea id="pesan" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tulis pesan Anda di sini"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-6">Informasi Kontak</h3>
+                        
+                        <div class="flex items-start mb-5">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800 mb-1">Alamat Kantor</h4>
+                                <p class="text-gray-700">Jl. Raya Beji No. 123, Kecamatan Beji, Kota Depok, Jawa Barat 16421</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-5">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800 mb-1">Telepon</h4>
+                                <p class="text-gray-700">(021) 12345678</p>
+                                <p class="text-gray-700">(021) 87654321 (Fax)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-5">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800 mb-1">Email</h4>
+                                <p class="text-gray-700">kua.beji@kemenag.go.id</p>
+                                <p class="text-gray-700">layanan.kua.beji@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800 mb-1">Jam Pelayanan</h4>
+                                <p class="text-gray-700">Senin - Kamis: 08:00 - 16:00 WIB</p>
+                                <p class="text-gray-700">Jumat: 08:00 - 16:30 WIB</p>
+                                <p class="text-gray-700">Sabtu - Minggu: Libur</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-bold text-blue-800 mb-6">Lokasi Kantor</h3>
+                        <div class="h-64 bg-gray-100 rounded-lg overflow-hidden">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.074203901176!2d106.823873!3d-6.387435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec1d1d84c4b5%3A0x4bcb91e861c2847a!2sKUA%20Kecamatan%20Beji!5e0!3m2!1sid!2sid!4v1629799341932!5m2!1sid!2sid" 
+                                width="100%" height="100%" style="border:0;" 
+                                allowfullscreen="" loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="font-bold text-xl mb-4">KUA Kecamatan Beji</h3>
+                <p class="text-gray-300 text-sm">Melayani Dengan Hati, Membangun Keluarga Sakinah.</p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-300 hover:text-white transition"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook-new.png" alt="Facebook" class="h-6 w-6"></a>
+                    <a href="#" class="text-gray-300 hover:text-white transition"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="Twitter" class="h-6 w-6"></a>
+                    <a href="#" class="text-gray-300 hover:text-white transition"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="h-6 w-6"></a>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="font-bold text-xl mb-4">Tautan Cepat</h3>
+                <ul class="space-y-2">
+                    <li><a href="#beranda" class="text-gray-300 hover:text-white transition">Beranda</a></li>
+                    <li><a href="#tentang" class="text-gray-300 hover:text-white transition">Tentang Kami</a></li>
+                    <li><a href="#layanan" class="text-gray-300 hover:text-white transition">Layanan</a></li>
+                    <li><a href="#berita" class="text-gray-300 hover:text-white transition">Berita</a></li>
+                    <li><a href="#kontak" class="text-gray-300 hover:text-white transition">Kontak</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="font-bold text-xl mb-4">Informasi Kontak</h3>
+                <p class="text-gray-300 mb-2">Jl. Raya Beji No. 123, Kota Depok, Jawa Barat 16421</p>
+                <p class="text-gray-300 mb-2">Telepon: (021) 12345678</p>
+                <p class="text-gray-300">Email: kua.beji@kemenag.go.id</p>
+            </div>
+        </div>
+        <div class="text-center border-t border-green-700 pt-6 mt-8">
+            <p class="text-gray-400 text-sm">&copy; 2025 KUA Kecamatan Beji.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Mobile Dropdown Toggle (for Profil in mobile menu)
+        const mobileDropdownButton = document.querySelector('#mobile-menu .dropdown button');
+        if (mobileDropdownButton) {
+            mobileDropdownButton.addEventListener('click', function() {
+                const dropdownContent = this.nextElementSibling;
+                dropdownContent.classList.toggle('hidden');
+                // Optional: Rotate arrow icon
+                this.querySelector('svg').classList.toggle('rotate-90');
+            });
+        }
+
+        // Accordion for Persyaratan Nikah
+        document.querySelectorAll('.max-w-4xl .bg-white .border-b button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const svg = button.querySelector('svg');
+
+                content.classList.toggle('hidden');
+                svg.classList.toggle('rotate-180'); // Rotate arrow icon
+            });
+        });
+    </script>
+</body>
+</html>
